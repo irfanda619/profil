@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<XML>
+
+	<id >
+		<soal>Bagian Komputer yang berfungsi untuk Pusat kompilasi hardware adalah</soal>
+		<pilihA>Motherboard</pilihA>
+		<pilihB>Prosessor</pilihB>
+		<pilihC>HeatSink</pilihC>
+		<pilihD>Monitor</pilihD>
+		<jawab>A</jawab>
+	</id>
+	<id >
+		<soal>Bagian Komputer yang berfungsi untuk menampilkan gambar adalah</soal>
+		<pilihA>Motherboard</pilihA>
+		<pilihB>Prosessor</pilihB>
+		<pilihC>HeatSink</pilihC>
+		<pilihD>Monitor</pilihD>
+		<jawab>D</jawab>
+	</id>
+	<id >
+		<soal>Bagian Komputer yang berfungsi untuk mendinginkan prosessor adalah</soal>
+		<pilihA>Motherboard</pilihA>
+		<pilihB>Prosessor</pilihB>
+		<pilihC>HeatSink</pilihC>
+		<pilihD>Monitor</pilihD>
+		<jawab>C</jawab>
+	</id>
+	<id >
+		<soal>Bagian Komputer yang berfungsi untuk Otak dari sebuah komputer adalah</soal>
+		<pilihA>Motherboard</pilihA>
+		<pilihB>Prosessor</pilihB>
+		<pilihC>HeatSink</pilihC>
+		<pilihD>Monitor</pilihD>
+		<jawab>B</jawab>
+	</id>
+	<id >
+		<soal>Bagian Komputer yang berfungsi untuk menyimpan data dan sistem operasi adalah</soal>
+		<pilihA>Motherboard</pilihA>
+		<pilihB>Hardisk</pilihB>
+		<pilihC>HeatSink</pilihC>
+		<pilihD>Monitor</pilihD>
+		<jawab>B</jawab>
+	</id>
+	
+</XML>
