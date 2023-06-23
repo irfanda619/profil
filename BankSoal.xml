@@ -2,43 +2,43 @@
 <XML>
 
 	<id >
-		<soal>Bagian Komputer yang berfungsi untuk Pusat kompilasi hardware adalah</soal>
-		<pilihA>Motherboard</pilihA>
-		<pilihB>Prosessor</pilihB>
-		<pilihC>HeatSink</pilihC>
-		<pilihD>Monitor</pilihD>
-		<jawab>A</jawab>
-	</id>
-	<id >
-		<soal>Bagian Komputer yang berfungsi untuk menampilkan gambar adalah</soal>
-		<pilihA>Motherboard</pilihA>
-		<pilihB>Prosessor</pilihB>
-		<pilihC>HeatSink</pilihC>
-		<pilihD>Monitor</pilihD>
-		<jawab>D</jawab>
-	</id>
-	<id >
-		<soal>Bagian Komputer yang berfungsi untuk mendinginkan prosessor adalah</soal>
-		<pilihA>Motherboard</pilihA>
-		<pilihB>Prosessor</pilihB>
-		<pilihC>HeatSink</pilihC>
-		<pilihD>Monitor</pilihD>
-		<jawab>C</jawab>
-	</id>
-	<id >
-		<soal>Bagian Komputer yang berfungsi untuk Otak dari sebuah komputer adalah</soal>
-		<pilihA>Motherboard</pilihA>
-		<pilihB>Prosessor</pilihB>
-		<pilihC>HeatSink</pilihC>
-		<pilihD>Monitor</pilihD>
+		<soal>Gambar bergerak yang terbentuk dari sekumpulan gambar yang disusun secara beraturan mengikuti alur pergerakan yang telah ditentukan adalah</soal>
+		<pilihA>Animatic</pilihA>
+		<pilihB>Stop Motion</pilihB>
+		<pilihC>Puppeters</pilihC>
+		<pilihD>Animotion</pilihD>
 		<jawab>B</jawab>
 	</id>
 	<id >
-		<soal>Bagian Komputer yang berfungsi untuk menyimpan data dan sistem operasi adalah</soal>
-		<pilihA>Motherboard</pilihA>
-		<pilihB>Hardisk</pilihB>
-		<pilihC>HeatSink</pilihC>
-		<pilihD>Monitor</pilihD>
+		<soal>Upaya untuk menggeser atau memutar atau mengubah ukuran objek, adalah</soal>
+		<pilihA>Transformation</pilihA>
+		<pilihB>Scale Manipulator</pilihB>
+		<pilihC>Rotate Manipulator</pilihC>
+		<pilihD>Translate Manipulator</pilihD>
+		<jawab>A</jawab>
+	</id>
+	<id >
+		<soal>Menentukan perubahan pada tombol atau animasi. Merupakan pengertian dari</soal>
+		<pilihA>Frame</pilihA>
+		<pilihB>Blank Frame</pilihB>
+		<pilihC>Blank Keyframe</pilihC>
+		<pilihD>Keyframe</pilihD>
+		<jawab>D</jawab>
+	</id>
+	<id >
+		<soal>Animasi yang dibuat menggunakan komputer dengan cara menggambar dan membuat animasi vektor secara langsung pada komputer disebut</soal>
+		<pilihA>Animasi 2D</pilihA>
+		<pilihB>Animasi Motion Graphic</pilihB>
+		<pilihC>Animasi Berbasis Vektor</pilihC>
+		<pilihD>Animasi Tradisional</pilihD>
+		<jawab>C</jawab>
+	</id>
+	<id >
+		<soal>Perubahan cepat dari gambar yang berurutan untuk menciptakan suatu ilusi gerakan</soal>
+		<pilihA>Multimedia</pilihA>
+		<pilihB>Animasi</pilihB>
+		<pilihC>Videograpic</pilihC>
+		<pilihD>Vector</pilihD>
 		<jawab>B</jawab>
 	</id>
 	
