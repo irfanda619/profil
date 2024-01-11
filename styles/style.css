@@ -588,8 +588,8 @@ p {
 }
 
 #footer .social-item img {
-	filter: invert(100%);
-	transition: 0.3s ease filter;
+	/* filter: invert(100%);
+	transition: 0.3s ease filter; */
 }
 
 #footer .social-item:hover img {
