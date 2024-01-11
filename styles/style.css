@@ -588,6 +588,7 @@ p {
   height: 50px;
   width: 50px;
   margin: 0 5px;
+  
 }
 
 /* #footer .social-item img {
@@ -724,6 +725,7 @@ p {
     flex-direction: row;
     justify-content: space-evenly;
     margin: 0;
+   
   }
 
   #contact .contact-item {
