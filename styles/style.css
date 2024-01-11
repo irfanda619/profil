@@ -16,12 +16,20 @@ a {
 	text-decoration: none;
 }
 
+body {
+	background-color: rgb(0, 24, 53);
+	color: white; /* Opsional: Mengubah warna teks agar terlihat lebih jelas */
+  }
+  
+
+
 .container {
 	min-height: 100vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 }
 
 img {
@@ -31,7 +39,7 @@ img {
 }
 
 p {
-	color: black;
+	/* color: black; */
 	font-size: 1.4rem;
 	margin-top: 5px;
 	line-height: 2.5rem;
@@ -42,7 +50,7 @@ p {
 .section-title {
 	font-size: 4rem;
 	font-weight: 300;
-	color: black;
+	/* color: black; */
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
@@ -514,6 +522,7 @@ p {
 #contact .contact-items {
 	/* max-width: 400px; */
 	width: 100%;
+	
 }
 
 #contact .contact-item {
