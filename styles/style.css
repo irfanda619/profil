@@ -1,5 +1,88 @@
 @import "https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap";
 
+/* back top */
+
+
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+
+
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  opacity: 0.5;
+  border: 3px solid rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px 0 #ffffff;
+}
+
+#back-to-top:hover {
+  background-color: darkred; /* Change color on hover */
+}
+
+
+
+/* end back to top*/
+
+/* scroll bar loading */
+
+#top-scrollbar {
+  position: fixed;
+  margin-top: 60px;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  overflow: hidden;
+  z-index: 99999;
+}
+
+#top-scrollbar-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(45deg, #a62626, #f09e22);
+}
+
+/* end scroll bar loading*/
+
+/* scroll bar styling */
+
+::-webkit-scrollbar {
+  width: 10px;
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+::-webkit-scrollbar:hover {
+  width: 25px;
+  transform: scale(85%);
+}
+
+::-webkit-scrollbar-track {
+  /* background: linear-gradient(rgb(53, 0, 0), rgb(68, 0, 0)); */
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+   /* background-image: linear-gradient(to right, rgb(196, 0, 196), #610000);  */
+  background-color: #ff8800;
+
+}
+
+/* end scroll bar styling */
+
 * {
   padding: 0;
   margin: 0;
@@ -19,6 +102,7 @@ a {
 body {
   background: linear-gradient(rgb(0, 24, 53), rgb(68, 0, 0));
   color: white; /* Opsional: Mengubah warna teks agar terlihat lebih jelas */
+  cursor: url('images/icon.png'), auto;
 }
 
 .container {
@@ -27,6 +111,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 img {
@@ -52,29 +137,38 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   text-align: center;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 5);
 }
 
 .section-title span {
+  text-shadow: 0 0 0px rgba(20, 110, 220, 5);
   color: rgb(20, 110, 220);
 }
 
 .cta {
   display: inline-block;
   padding: 10px 30px;
+
+  box-shadow: 0px 0px 10px 0 #000a9700;
   color: white;
-  background-color: rgb(20, 110, 220);
-  /* border: 10px solid rgb(20, 110, 220); */
+  background-color: rgb(0, 51, 113);
+  border: 5px solid rgb(20, 110, 220);
+
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin-top: 30px;
   transition: 0.3s ease;
   transition-property: background-color, color;
+  
+font-weight: bold;
 }
 
 .cta:hover {
-  color: white;
-  background-color: rgb(0, 51, 113);
+  border: 5px solid rgb(220, 20, 20);
+  box-shadow: 0px 0px 18px 0 #ffffff00;
+  color : rgb(255, 255, 255);
+  background-color: rgb(122, 0, 0);
 }
 
 .brand h1 {
@@ -88,6 +182,7 @@ p {
 }
 
 #header {
+  background-color: #0b00a500;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -105,14 +200,16 @@ p {
 }
 
 #header .nav-bar {
+  background: linear-gradient(60deg, #00008b, #a50000); /* Warna biru tua ke merah tua */
+  transition: background 0.5s ease; /* Transisi untuk animasi perubahan warna */
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  max-width: 1300px;
+  max-width: 100%;
   padding: 0 10px;
-  background-color: #a51e00;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 5);
 }
 
 #header .nav-list ul {
@@ -134,6 +231,7 @@ p {
 
 #header .nav-list ul.active {
   left: 0%;
+  
 }
 
 #header .nav-list ul a {
@@ -154,7 +252,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   color: rgba(240, 248, 255, 0.021);
-  font-size: 13rem;
+  font-size: 0rem;
   letter-spacing: 50px;
   z-index: -1;
   transition: 0.3s ease letter-spacing;
@@ -166,7 +264,8 @@ p {
 }
 
 #header .nav-list ul li:hover a {
-  color: rgb(125, 125, 125);
+  color: rgb(126, 229, 255);
+  
 }
 
 #header .hamburger {
@@ -266,6 +365,7 @@ p {
   color: transparent;
   animation: text_reveal 0.5s ease forwards;
   animation-delay: 1s;
+  
 }
 
 #home h1:nth-child(1) {
@@ -282,12 +382,13 @@ p {
 }
 
 #home h1 span {
+ 
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 0;
-  background-color: rgb(60, 148, 255);
+  background-color: #a50000;
   animation: text_reveal_box 1s ease;
   animation-delay: 0.5s;
 }
@@ -494,7 +595,8 @@ p {
   height: 100%;
   width: 100%;
   position: relative;
-  border: 12px solid rgb(179, 0, 24);
+  border: 12px solid rgb(255, 255, 255);
+  box-shadow: 0px 0px 20px 0 #ff0000;
 }
 
 #about .col-left .about-img::after {
@@ -530,9 +632,9 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1b000086;
+  background-color: #ee000086;
   flex-direction: column;
-  box-shadow: 0px 0px 18px 0 #0000006b;
+  box-shadow: 0px 0px 18px 0 #ff00006b;
   transition: 0.3s ease box-shadow;
 }
 
@@ -588,7 +690,7 @@ p {
   height: 50px;
   width: 50px;
   margin: 0 5px;
-  
+
 }
 
 /* #footer .social-item img {
@@ -637,9 +739,17 @@ p {
 
 @keyframes text_reveal_name {
   100% {
-    color: rgb(20, 110, 220);
-    font-weight: 500;
+
+    
+    text-shadow: 0 0 20px rgba(0, 17, 255, 0.8);
+    /* background: linear-gradient(150deg, hsl(0, 100%, 50%),#0000ff ); 
+      -webkit-background-clip: text; 
+      color: transparent; Membuat teks menjadi transparan */
+  color: #4aa7ffc2;
+    font-weight: 1500;
   }
+
+  
 }
 
 @media only screen and (min-width: 768px) {
@@ -699,7 +809,7 @@ p {
     top: 34px;
     height: 98%;
     width: 98%;
-    border: 10px solid rgba(148, 0, 0, 0.356);
+    border: 10px solid rgba(255, 0, 0, 0.356);
   }
 
   #about .col-right {

@@ -7,14 +7,25 @@
   <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="scss/_variables.scss">
   <title>Irfanda Anugerah's Profile</title>
  
 </head>
 
 <body>
 
+    <!-- scrollbar -->
+    <div id="top-scrollbar">
+      <div id="top-scrollbar-bg">
+      </div>
+    </div>
+    <!-- end scrollbar -->
+  
+
   <section id="header">
-    <div class="header container">
+    <div class="header container" >
       <div class="nav-bar">
         <div class="brand">
           <a href="#home">
@@ -173,7 +184,7 @@
       </div>
       <div class="contact-items">
         <div class="contact-item">
-          <img style="height:50px ;width:auto;filter: saturate(0);" src="https://img.icons8.com/nolan/64/phone.png" /><br>
+          <img style="height:50px ;width:auto;" src="https://img.icons8.com/nolan/64/phone.png" /><br>
           <div class="contact-info">
             <h1>Phone</h1>
             <h3>0896 9376 9443</h3>
@@ -181,7 +192,7 @@
           </div>
         </div>
         <div class="contact-item">
-          <img style="height:50px ;width:auto;filter: saturate(0);" src="https://img.icons8.com/nolan/64/new-post.png" /><br>
+          <img style="height:50px ;width:auto;" src="https://img.icons8.com/nolan/64/new-post.png" /><br>
           <div class="contact-info">
             <h1>Email</h1>
             <h3>irfandaanugerah619@gmail.com</h3>
@@ -189,7 +200,7 @@
           </div>
         </div>
         <div class="contact-item">
-          <img style="height:50px ;width:auto;filter: saturate(0);" src="https://img.icons8.com/nolan/64/address.png" /><br>
+          <img style="height:50px ;width:auto;" src="https://img.icons8.com/nolan/64/address.png" /><br>
           <div class="contact-info">
             <h1>Address</h1>
             <h3>Pontianak, Kalimantan Barat, Indonesia</h3>
@@ -206,7 +217,7 @@
     class="footer container">
      
       
-      <h2 style="text-align: center; font-size: x-large;">Follow My Account</h2>
+      <h2 style="text-align: center; font-size: x-large;text-shadow: 0 0 5px rgba(255, 255, 255, 5);">Follow My Account</h2>
       <div class="social-icon">
         <div class="social-item">
           <a href="https://www.facebook.com/irfanda.anugerah" target="_blank"><img
@@ -245,8 +256,14 @@
       </div>
 
   </section>
-
+  <script src="./scripts/scroll.js"></script>
   <script src="./scripts/app.js"></script>
+  <script src="./scripts/backtotop.js"></script>
+ 
+
+  
 </body>
+
+<a id="back-to-top" href="#" class="back-to-top" role="button"><i class="fa-solid fa-chevron-up"></i></a>
 
 </html>
