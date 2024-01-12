@@ -3,6 +3,7 @@
 /* scroll bar loading */
 
 #top-scrollbar {
+  z-index: 999;
   position: fixed;
   margin-top: 60px;
   top: 0;
@@ -10,7 +11,9 @@
   width: 0%;
   height: 6px;
   overflow: hidden;
-  z-index: 99999;
+
+
+  /* border-right: 10px solid #ffffff2d; */
 }
 
 #top-scrollbar-bg {
@@ -74,7 +77,9 @@
 ::-webkit-scrollbar-track {
   /* background: linear-gradient(rgb(53, 0, 0), rgb(68, 0, 0)); */
   background-color: rgb(141, 0, 0);
-  border: 3px solid #580000;
+  /* border: 3px solid #580000; */
+  border-left: 3px solid #580000;
+  border-right: 3px solid #580000;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -184,6 +189,7 @@ font-weight: bold;
 }
 
 #header {
+  background: linear-gradient(60deg, #00008b, #a50000); /* Warna biru tua ke merah tua */
   background-color: #0b00a500;
   position: fixed;
   z-index: 1000;
@@ -191,13 +197,13 @@ font-weight: bold;
   top: 0;
   width: 100vw;
   height: auto;
-  box-shadow: 0px 0px 20px 0 #1f0000;
+  box-shadow: 0px 0px 5px 0 #1f0000;
 }
 
 #header .header {
   min-height: 8vh;
 
-
+  background: linear-gradient(60deg, #00008b, #a50000); /* Warna biru tua ke merah tua */
   transition: 0.3s ease background-color;
 }
 
@@ -212,9 +218,11 @@ font-weight: bold;
   max-width: 100%;
   padding: 0 10px;
   text-shadow: 0 0 5px rgba(255, 255, 255, 5);
+  z-index: 90;
 }
 
 #header .nav-list ul {
+ 
   list-style: none;
   position: absolute;
   background-color: rgba(51, 0, 0, 0.889);
@@ -229,11 +237,12 @@ font-weight: bold;
   z-index: 1;
   overflow-x: hidden;
   transition: 0.5s ease left;
+
 }
 
 #header .nav-list ul.active {
   left: 0%;
-  
+ 
 }
 
 #header .nav-list ul a {
@@ -280,7 +289,7 @@ font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 80;
   cursor: pointer;
   transform: scale(0.8);
   margin-right: 20px;
@@ -876,6 +885,7 @@ font-weight: bold;
     height: auto;
     width: fit-content;
     background-color: transparent;
+    
   }
 
   #header .nav-list ul li {
@@ -893,5 +903,12 @@ font-weight: bold;
   #skills .service-bottom .service-item {
     flex-basis: 22%;
     margin: 1.5%;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  #top-scrollbar {
+    margin-top: 117px;
+   
   }
 }
