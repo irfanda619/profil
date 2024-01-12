@@ -425,7 +425,7 @@ font-weight: bold;
 }
 
 #skills .service-top {
-  max-width: 500px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -592,6 +592,7 @@ font-weight: bold;
 }
 
 #about .col-right p {
+  
   margin-bottom: 20px;
 }
 
@@ -788,6 +789,8 @@ font-weight: bold;
   #experience .project-item {
     flex-direction: row;
   }
+
+
 
   #experience .project-item:nth-child(even) {
     flex-direction: row-reverse;
