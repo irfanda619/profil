@@ -11,6 +11,13 @@ document.getElementsByTagName("body")[0].onresize = function () {
 
 window.onscroll = function () {
     // Change the width of the progress bar
+    scrollbar_function();
+
+    // Call the scrollFunction from backtotop.js
+    scrollFunction();
+}
+
+function scrollbar_function() {
     var bar = document.getElementById("top-scrollbar"),
         dw = document.documentElement.clientWidth,
         dh = Math.max(body.scrollHeight, body.offsetHeight,
