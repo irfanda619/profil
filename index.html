@@ -1,23 +1,280 @@
-<!doctype html>
-<title>Site Maintenance</title>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-<style>
-  html, body { padding: 0; margin: 0; width: 100%; height: 100%; }
-  * {box-sizing: border-box;}
-  body { text-align: center; padding: 0; background: #d6433b; color: #fff; font-family: Open Sans; }
-  h1 { font-size: 50px; font-weight: 100; text-align: center;}
-  body { font-family: Open Sans; font-weight: 100; font-size: 20px; color: #fff; text-align: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center;}
-  article { display: block; width: 700px; padding: 50px; margin: 0 auto; }
-  a { color: #fff; font-weight: bold;}
-  a:hover { text-decoration: none; }
-  svg { width: 75px; margin-top: 1em; }
-</style>
+<!DOCTYPE html>
+<html lang="en">
 
-<article>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.24 202.24"><defs><style>.cls-1{fill:#fff;}</style></defs><title>Asset 3</title><g id="Layer_2" data-name="Layer 2"><g id="Capa_1" data-name="Capa 1"><path class="cls-1" d="M101.12,0A101.12,101.12,0,1,0,202.24,101.12,101.12,101.12,0,0,0,101.12,0ZM159,148.76H43.28a11.57,11.57,0,0,1-10-17.34L91.09,31.16a11.57,11.57,0,0,1,20.06,0L169,131.43a11.57,11.57,0,0,1-10,17.34Z"/><path class="cls-1" d="M101.12,36.93h0L43.27,137.21H159L101.13,36.94Zm0,88.7a7.71,7.71,0,1,1,7.71-7.71A7.71,7.71,0,0,1,101.12,125.63Zm7.71-50.13a7.56,7.56,0,0,1-.11,1.3l-3.8,22.49a3.86,3.86,0,0,1-7.61,0l-3.8-22.49a8,8,0,0,1-.11-1.3,7.71,7.71,0,1,1,15.43,0Z"/></g></g></svg>
-    <h1>We&rsquo;ll be back soon!</h1>
-    <div>
-        <p>Sorry for the inconvenience. We&rsquo;re performing some maintenance at the moment.</p> 
-        <p>&mdash; Irfanda Anugerah</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images\icon.jpg">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+  <title>Irfanda Anugerah's Profile</title>
+ 
+</head>
+
+<body>
+
+  
+
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#home">
+            <!-- <img style="height: 50px; width: auto; padding-left: 30px;" src="images\icon.png"> -->
+            <img style="height: 50px; width: auto; padding-left: 30px;" src="https://i.postimg.cc/JhjH07FD/icon.png">
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#home" data-after="Home">Home</a></li>
+            <li><a href="#skills" data-after="Service">Skills</a></li>
+            <li><a href="#experience" data-after="experience">Experience</a></li>
+            <li><a href="#about" data-after="About">About</a></li>
+            <li><a href="#contact" data-after="Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-</article>
+  </section>
+
+
+ <!-- scrollbar -->
+ <div id="top-scrollbar">
+  <div id="top-scrollbar-bg">
+  </div>
+</div>
+<!-- end scrollbar -->
+
+  <!-- <section id="home" style="background-image: url(./images/hero-bg1.jpg);"> -->
+    <section id="home" style="background-image: url(https://i.postimg.cc/kGpvchs0/hero-bg1.jpg);">
+    <div class="home container">
+      <div>
+        <h1>Hello, <span></span></h1>
+        <h1>My Name is <span></span></h1>
+        <h1>Irfanda Anugerah <span></span></h1>
+        <a href="#skills" type="button" class="cta">Get To Know Me Better</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="skills">
+    <div class="skills container">
+      <div class="service-top">
+        <h1 class="section-title"><span>My</span> Skills</h1>
+        <p style="margin-left: 40px; margin-right: 40px;">I've been learning things in this field for a long time, so I'm pretty good at some Multimedia applications.
+        </p>
+      </div>
+      <div class="service-bottom">
+        <div class="service-item">
+          <div class="icon"><img src="https://i.postimg.cc/tJ4sB34W/img-services-1.jpg" /></div>
+          <!-- <div class="icon"><img src="images/img-services-1.jpg" /></div> -->
+          <h2>Web Design</h2>
+          <p>In web design I've learned about CSS, Bootstrap, HTML</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://i.postimg.cc/pXy98J7t/img-services-2.jpg" /></div>
+          <!-- <div class="icon"><img src="images/img-services-2.jpg" /></div> -->
+          <h2>Graphic Design</h2>
+          <p>In graphic design I understand several applications such as Corel Draw & Photoshop (PC) <br>Pixellab &
+            Picsart (Mobile)</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://i.postimg.cc/PfSpPRS4/img-services-3.jpg" /></div>
+          <!-- <div class="icon"><img src="images/img-services-3.jpg" /></div> -->
+          <h2>Video Editing</h2>
+          <p>In video editing I understand using
+            Adobe Premiere (Cut to cut, color grading, transition, rendering etc.) and also Kinemaster, I usually use it
+            when I want to edit regular videos</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="experience">
+    <div class="experience container">
+      <div class="experience-header">
+        
+        <h1 class="section-title"><span style="color: #8100b4;">Ex</span>perience
+        </h1>
+        <p style="margin-left: 40px; margin-right: 40px;">I've also had some experience in the world of work, starting from an internship 
+          while studying in high school, a job that was really my first job and then also an 
+          internship opportunity during college.
+        </p>
+
+
+      </div>
+      <div class="all-experience">
+        <div class="project-item">
+          <div class="project-info">
+            <h1>Highschool Internship</h1>
+            <h2>Swadesi Printing</h2>
+            <p>I had an internship for 2 months during high school, at that time I chose to do an internship in a
+              printing press, from which I got my first work experience</p>
+          </div>
+          <div class="project-img">
+            <img src="https://i.postimg.cc/m2qPSFf1/img-projects-2.jpg" alt="img">
+            <!-- <img src="images\img-projects-2.jpg" alt="img"> -->
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1>First Job</h1>
+            <h2>DX Printing</h2>
+            <p>After graduating from high school I decided to take a gap year for one year before going to college, I
+              started working in printing in the Graphic Designer section</p>
+          </div>
+          <div class="project-img">
+            <img src="https://i.postimg.cc/YSNjkn4Q/img-projects-1.jpg" alt="img">
+            <!-- <img src="images\img-projects-1.jpg" alt="img"> -->
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-info">
+            <h1>College Internship</h1>
+            <h2>Telkom Witel Kalbar</h2>
+            <p>While studying, I also interned for 2 months at Telkom Witel West Kalimantan in the Digital Service & Wifi section.</p>
+          </div>
+          <div class="project-img">
+            <img src="https://i.postimg.cc/NjH5CfBJ/img-projects-3.jpg" alt="img">
+            <!-- <img src="images\img-projects-3.jpg" alt="img"> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="about">
+    <div class="about container" style="padding-left: 40px; padding-right: 40px;">
+      <div class="col-left">
+        <div class="about-img">
+          <img src="https://i.postimg.cc/ZRTnq832/img-2.jpg" alt="img">
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">About <span style="color: rgb(220, 20, 20);">me</span></h1>
+        <h2>Irfanda Anugerah</h2>
+   
+
+    
+
+        <p>Hello Everyone, I'm an ordinary student at one of the state polytechnics in Pontianak, West Kalimantan. I really like
+          things related to gadgets, anime, games, design. </p>
+
+      </div>
+
+      
+    </div>
+
+    
+  </section>
+
+
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Contact</h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <img style="height:50px ;width:auto;" src="https://img.icons8.com/nolan/64/phone.png" /><br>
+          <div class="contact-info">
+            <h1>Phone</h1>
+            <h3>0896 9376 9443</h3>
+            <h3>0851 5524 3027</h3>
+          </div>
+        </div>
+        <div class="contact-item">
+          <img style="height:50px ;width:auto;" src="https://img.icons8.com/nolan/64/new-post.png" /><br>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h3>irfandaanugerah619@gmail.com</h3>
+            <h3>irfanda_anugerah@yahoo.com</h3>
+          </div>
+        </div>
+        <div class="contact-item">
+          <img style="height:50px ;width:auto;" src="https://img.icons8.com/nolan/64/address.png" /><br>
+          <div class="contact-info">
+            <h1>Address</h1>
+            <h3>Pontianak, Kalimantan Barat, Indonesia</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="footer">
+    <div style="margin-top: 80px;"
+    class="footer container">
+     
+      
+      <h2 style="text-align: center; font-size: x-large;text-shadow: 0 0 5px rgba(255, 255, 255, 5);">Follow My Account</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="https://www.facebook.com/irfanda.anugerah" target="_blank"><img
+              src="https://i.postimg.cc/Y0DhZvvV/facebook.png"/></a>
+              <!-- src="images\facebook.png" /></a> -->
+        </div>
+        <div class="social-item">
+          <a href="https://twitter.com/irfandaanugerah" target="_blank"><img
+              src="https://i.postimg.cc/76VC1swq/twitter.png" /></a>
+              <!-- src="images\twitter.png" /></a> -->
+        </div>
+        <div class="social-item">
+          <a href="https://www.instagram.com/irfandaanugerah/tagged/" target="_blank"><img
+              src="https://i.postimg.cc/sXyQhdFn/instagram.png" /></a>
+              <!-- src="images\instagram.png" /></a> -->
+        </div>
+        <div class="social-item">
+          <a href="https://github.com/irfanda619" target="_blank"><img
+              src="https://i.postimg.cc/FKX1M5K9/github.png" /></a>
+              <!-- src="images\github.png" /></a> -->
+        </div>
+
+      </div>
+       
+
+      <div class="brand">
+
+       
+        <h2 style="text-align: center;">English II - Final Exam</h2>
+        <h2 style="padding-bottom: 20px; text-align: center;" id="copyrightYear"></h2>
+
+    <script>
+        // Mendapatkan tahun saat ini
+        var currentYear = new Date().getFullYear();
+
+        // Mengubah teks pada elemen dengan id 'copyrightYear' menjadi tahun saat ini
+        document.getElementById('copyrightYear').innerText = 'Copyright ' + currentYear;
+    </script>
+
+      </div>
+
+  </section>
+  
+  <script src="./scripts/scroll.js"></script>
+  <script src="./scripts/app.js"></script>
+  <script src="./scripts/backtotop.js"></script>
+  
+
+  
+</body>
+
+<a id="back-to-top" href="#" class="back-to-top" role="button"><i class="fa-solid fa-chevron-up"></i></a>
+
+</html>
