@@ -158,8 +158,8 @@ p {
 
   box-shadow: 0px 0px 10px 0 #000a9700;
   color: white;
-  background-color: rgb(0, 51, 113);
-  border: 5px solid rgb(20, 110, 220);
+  background-color: rgba(0, 51, 113, 0.5);
+
 
   font-size: 2rem;
   text-transform: uppercase;
@@ -172,10 +172,10 @@ font-weight: bold;
 }
 
 .cta:hover {
-  border: 5px solid rgb(220, 20, 20);
+ 
   box-shadow: 0px 0px 18px 0 #ffffff00;
   color : rgb(255, 255, 255);
-  background-color: rgb(122, 0, 0);
+  background-color: rgb(0, 33, 122);
 }
 
 .brand h1 {
@@ -754,7 +754,7 @@ font-weight: bold;
 
     
   
-    background: linear-gradient(135deg, hsl(0, 0%, 100%),#ffffff4f ); 
+    background: linear-gradient(135deg, #ffffff4f ,#ffffff4f ); 
       -webkit-background-clip: text; 
       color: transparent; /*Membuat teks menjadi transparan*/
 
