@@ -152,30 +152,48 @@ p {
   color: rgb(20, 110, 220);
 }
 
+/* Animasi CSS */
+@keyframes fadeIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .cta {
+
+
   display: inline-block;
   padding: 10px 30px;
 
   box-shadow: 0px 0px 10px 0 #000a9700;
-  color: white;
-  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(255, 255, 255);
+  background-color: rgba(162, 0, 255, 0.205);
 
+  border: 5px solid rgba(119, 0, 255, 0.39); /* Menambahkan border */
 
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  margin-top: 30px;
+  margin-top: 70px;
   transition: 0.3s ease;
   transition-property: background-color, color;
-  
+  border-radius: 15px;
 font-weight: bold;
+
+opacity: 0; /* Set opacity menjadi 0 */
+animation: fadeIn 5s ease forwards; /* Terapkan animasi fadeIn */
 }
 
 .cta:hover {
- 
-  box-shadow: 0px 0px 18px 0 #ffffff00;
-  color : rgb(51, 0, 0);
-  background-color: rgb(255, 255, 255);
+  border: 5px solid rgb(92, 0, 145); /* Menambahkan border */
+
+  color : rgb(255, 255, 255);
+
 }
 
 .brand h1 {
@@ -416,12 +434,15 @@ font-weight: bold;
   animation-delay: 2.5s;
 }
 
+
 #skills .skills {
   flex-direction: column;
   text-align: center;
   max-width: 1500px;
   margin: 0 auto;
   padding: 100px 0;
+  
+
 }
 
 #skills .service-top {
