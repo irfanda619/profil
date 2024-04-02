@@ -174,7 +174,7 @@ font-weight: bold;
 .cta:hover {
  
   box-shadow: 0px 0px 18px 0 #ffffff00;
-  color : rgb(255, 0, 0);
+  color : rgb(51, 0, 0);
   background-color: rgb(255, 255, 255);
 }
 
@@ -754,7 +754,7 @@ font-weight: bold;
 
     
   
-    background: linear-gradient(135deg, #ffffff4f ,#ffffff4f ); 
+    background: linear-gradient(135deg, #ffffffab ,#ffffff4f ); 
       -webkit-background-clip: text; 
       color: transparent; /*Membuat teks menjadi transparan*/
 
