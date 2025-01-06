@@ -16,6 +16,7 @@
             height: 100vh;
             margin: 0;
             padding: 0;
+            position: relative;
         }
 
         .container {
@@ -27,6 +28,7 @@
             width: 100%;
             max-width: 400px;
             margin: 50px;
+            position: relative;
         }
 
         h1 {
@@ -41,48 +43,35 @@
         }
 
         .spinner {
-    width: 80px;
-    height: 80px;
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #FFA500;
-    border-radius: 50%;
-    margin: 20px auto;
-    animation: spin 1s linear infinite, colorChange 3s linear infinite;
-    position: relative; /* Menambahkan position relative pada spinner */
-    box-shadow: 0px 0px 10px 0 #ffffff;
-}
-
-.spinner img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 70px; /* Ukuran gambar diperbesar sedikit */
-    height: 70px; /* Ukuran gambar diperbesar sedikit */
-    border-radius: 50%;
-    transform: translate(-50%, -50%); /* Menjaga gambar tetap di tengah */
-   
-}
-
-        /* New animation for color change with outrageous colors */
-        @keyframes colorChange {
-            0% {
-                border-top-color: #FF00FF; /* Neon Magenta */
-            }
-            25% {
-                border-top-color: #00FF00; /* Neon Green */
-            }
-            50% {
-                border-top-color: #FFFF00; /* Neon Yellow */
-            }
-            75% {
-                border-top-color: #00FFFF; /* Neon Cyan */
-            }
-            100% {
-                border-top-color: #FF00FF; /* Neon Magenta */
-            }
+            width: 80px;
+            height: 80px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #FFA500;
+            border-radius: 50%;
+            margin: 20px auto;
+            animation: spin 1s linear infinite, colorChange 3s linear infinite;
+            position: relative;
+            box-shadow: 0px 0px 10px 0 #ffffff;
         }
 
-        /* Animasi rotasi spinner */
+        .spinner img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes colorChange {
+            0% { border-top-color: #FF00FF; }
+            25% { border-top-color: #00FF00; }
+            50% { border-top-color: #FFFF00; }
+            75% { border-top-color: #00FFFF; }
+            100% { border-top-color: #FF00FF; }
+        }
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -121,17 +110,50 @@
         .social-media .icon-container:hover {
             transform: scale(1.2);
         }
+
+        /* Tombol hitam dengan transparansi 30% dan animasi cepat */
+        .invisible-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 1; /* Tombol langsung muncul */
+            transition: opacity 0.5s ease-in-out; /* Animasi lebih cepat */
+        }
+
+        /* Currently playing */
+        .currently-playing {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            opacity: 0.1;
+            font-size: 0.7em;
+            font-family: 'Cascadia Code', monospace;
+            padding: 10px 0;
+            box-sizing: border-box;
+            display: none;
+            left: 0;
+            right: 0;
+        }
+
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Profile Under Maintenance</h1>
-        <p>We are currently updating the profile. Please check back soon.</p>
+        <h1>Under Maintenance</h1>
+        <p>We are currently updating the profile.<br>Please check back soon.</p>
         <div class="spinner">
             <img src="./ezgif-4-eb8c82ca0c.webp" alt="Yumeko Jabami">
         </div>
         <div class="footer">
-            <p>Developed by <strong style="   text-shadow: 0 0 2.5px white, 0 0 5px white;">Irfanda Anugerah</strong></p>
+            <p>Developed by <strong style="text-shadow: 0 0 2.5px white, 0 0 5px white;">Irfanda Anugerah</strong></p>
         </div>
 
         <div class="social-media">
@@ -153,9 +175,58 @@
         </div>
     </div>
 
-    <audio autoplay loop>
+    <!-- Tombol tak terlihat -->
+    <button class="invisible-button" id="playButton"></button>
+
+    <audio id="audioPlayer" preload="auto">
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+
+    <div class="currently-playing" id="currentlyPlaying">
+        Currently playing : <br>
+        Sound 1 by SoundHelix
+    </div>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const currentlyPlaying = document.getElementById('currentlyPlaying');
+
+        playButton.addEventListener('click', () => {
+            audioPlayer.play().catch(error => {
+                console.error('Error playing audio:', error);
+            });
+            currentlyPlaying.style.display = 'block';
+            playButton.style.opacity = 0;  // Sembunyikan tombol dengan animasi
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+            playButton.style.opacity = 1;  // Tombol muncul kembali setelah musik berhenti
+            currentlyPlaying.style.display = 'none';
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                audioPlayer.pause();
+                playButton.style.opacity = 1;  // Tombol muncul kembali saat tab hilang
+                currentlyPlaying.style.display = 'none';
+            } else {
+                if (audioPlayer.paused) {
+                    playButton.style.opacity = 1;  // Tombol muncul kembali jika audio berhenti
+                    currentlyPlaying.style.display = 'none';
+                } else {
+                    playButton.style.opacity = 0;  // Tombol disembunyikan saat musik diputar
+                    currentlyPlaying.style.display = 'block';
+                }
+            }
+        });
+
+        window.addEventListener('blur', () => {
+            audioPlayer.pause();
+            playButton.style.opacity = 1;  // Tombol muncul kembali saat tab hilang
+            currentlyPlaying.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
