@@ -44,26 +44,28 @@
         }
 
         .spinner {
-            width: 80px;
-            height: 80px;
-            border: 6px solid #f3f3f3;
-            border-top: 6px solid #FFA500;
+            width: 75px;
+            height: 75px;
+            border: 7px solid #f3f3f3;
+            border-top: 7px solid #FFA500;
             border-radius: 50%;
             margin: 20px auto;
             animation: spin 1s linear infinite, colorChange 3s linear infinite;
             position: relative;
             box-shadow: 0px 0px 10px 0 #ffffff;
-            z-index: 101;
+            z-index: 102;
         }
 
         .spinner img {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             transform: translate(-50%, -50%);
+            z-index: 101;
+            display: none;
         }
 
         @keyframes colorChange {
@@ -113,7 +115,6 @@
             transform: scale(1.2);
         }
 
-        /* Tombol hitam dengan transparansi 30% dan animasi cepat */
         .invisible-button {
             position: absolute;
             top: 0;
@@ -124,38 +125,37 @@
             border: none;
             cursor: pointer;
             z-index: 10;
-            opacity: 1; /* Tombol langsung muncul */
-            transition: opacity 0.5s ease-in-out; /* Animasi lebih cepat */
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        /* Currently playing */
         .currently-playing {
-            display: none; /* Sembunyikan saat halaman dimuat */
-            position: fixed; /* Agar elemen selalu di bawah layar */
-            bottom: 0; /* Posisikan di bawah */
-            width: 100%; /* Lebar elemen memenuhi layar */
+            display: none;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             text-align: center;
-            opacity: 0.5; /* Tingkat transparansi */
-            font-size: 0.5rem; /* Sesuaikan ukuran font untuk responsif */
+            opacity: 0.5;
+            font-size: 0.5rem;
             font-family: 'Cascadia Code', monospace;
             padding: 10px 0;
             box-sizing: border-box;
             left: 0;
             right: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Agar terlihat jelas di atas konten */
-            color: white; /* Teks berwarna putih agar kontras */
-            z-index: 100; /* Pastikan di atas konten lainnya */
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            z-index: 100;
         }
 
         @media (max-width: 600px) {
             .currently-playing {
-                font-size: 0.8rem; /* Sesuaikan ukuran font untuk layar kecil */
+                font-size: 0.8rem;
             }
         }
 
         @media (max-width: 400px) {
             .currently-playing {
-                font-size: 0.7rem; /* Lebih kecil di layar yang sangat kecil */
+                font-size: 0.7rem;
             }
         }
 
@@ -194,50 +194,54 @@
 
     <button class="invisible-button" id="playButton"></button>
 
-    <audio id="audioPlayer" preload="auto">
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    <audio id="audioPlayer" preload="auto" loop>
+        <source src="./pedro-pedro-pedro-pe-made-with-Voicemod.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <div class="currently-playing" id="currentlyPlaying">
         Currently playing : <br>
-        Sound 1 by SoundHelix
+        Pedro Pedro Pedro Pe
     </div>
 
     <script>
         const playButton = document.getElementById('playButton');
         const audioPlayer = document.getElementById('audioPlayer');
+        const spinnerImage = document.querySelector('.spinner img');
         const currentlyPlaying = document.getElementById('currentlyPlaying');
 
         playButton.addEventListener('click', () => {
             audioPlayer.play().catch(error => {
                 console.error('Error playing audio:', error);
             });
-            currentlyPlaying.style.display = 'block';  // Menampilkan elemen setelah play
-            playButton.style.opacity = 0;  // Mengubah opacity
-            playButton.style.visibility = 'hidden';  // Menyembunyikan tombol agar tidak menghalangi
+            spinnerImage.style.display = 'block';
+            currentlyPlaying.style.display = 'block';
+            playButton.style.opacity = 0;
+            playButton.style.visibility = 'hidden';
         });
 
         audioPlayer.addEventListener('ended', () => {
-            playButton.style.opacity = 1;  // Tombol muncul kembali setelah musik berhenti
-            playButton.style.visibility = 'visible';  // Tombol bisa terlihat lagi
+            spinnerImage.style.display = 'none';
+            playButton.style.opacity = 1;
+            playButton.style.visibility = 'visible';
             currentlyPlaying.style.display = 'none';
         });
 
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
                 audioPlayer.pause();
-                playButton.style.opacity = 1;  // Tombol muncul kembali saat tab hilang
-                playButton.style.visibility = 'visible';  // Tombol bisa terlihat lagi
+                spinnerImage.style.display = 'none';
+                playButton.style.opacity = 1;
+                playButton.style.visibility = 'visible';
                 currentlyPlaying.style.display = 'none';
             } else {
                 if (audioPlayer.paused) {
-                    playButton.style.opacity = 1;  // Tombol muncul kembali jika audio berhenti
-                    playButton.style.visibility = 'visible';  // Tombol bisa terlihat lagi
+                    playButton.style.opacity = 1;
+                    playButton.style.visibility = 'visible';
                     currentlyPlaying.style.display = 'none';
                 } else {
-                    playButton.style.opacity = 0;  // Tombol disembunyikan saat musik diputar
-                    playButton.style.visibility = 'hidden';  // Menyembunyikan tombol sepenuhnya
+                    playButton.style.opacity = 0;
+                    playButton.style.visibility = 'hidden';
                     currentlyPlaying.style.display = 'block';
                 }
             }
@@ -245,8 +249,9 @@
 
         window.addEventListener('blur', () => {
             audioPlayer.pause();
-            playButton.style.opacity = 1;  // Tombol muncul kembali saat tab hilang
-            playButton.style.visibility = 'visible';  // Tombol bisa terlihat lagi
+            spinnerImage.style.display = 'none';
+            playButton.style.opacity = 1;
+            playButton.style.visibility = 'visible';
             currentlyPlaying.style.display = 'none';
         });
     </script>
