@@ -20,7 +20,6 @@
         }
 
         .container {
-        
             padding: 50px;
             background-color: rgba(255, 255, 255, 0);
             border-radius: 12px;
@@ -130,18 +129,33 @@
 
         /* Currently playing */
         .currently-playing {
-            position: absolute;
-            bottom: 80px;
-            width: 100%;
+            display: none; /* Sembunyikan saat halaman dimuat */
+            position: fixed; /* Agar elemen selalu di bawah layar */
+            bottom: 0; /* Posisikan di bawah */
+            width: 100%; /* Lebar elemen memenuhi layar */
             text-align: center;
-            opacity: 0.5;
-            font-size: 0.7em;
+            opacity: 0.5; /* Tingkat transparansi */
+            font-size: 0.6rem; /* Sesuaikan ukuran font untuk responsif */
             font-family: 'Cascadia Code', monospace;
             padding: 10px 0;
             box-sizing: border-box;
-            display: none;
             left: 0;
             right: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Agar terlihat jelas di atas konten */
+            color: white; /* Teks berwarna putih agar kontras */
+            z-index: 100; /* Pastikan di atas konten lainnya */
+        }
+
+        @media (max-width: 600px) {
+            .currently-playing {
+                font-size: 0.8rem; /* Sesuaikan ukuran font untuk layar kecil */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .currently-playing {
+                font-size: 0.7rem; /* Lebih kecil di layar yang sangat kecil */
+            }
         }
 
     </style>
@@ -177,7 +191,6 @@
         </div>
     </div>
 
-
     <button class="invisible-button" id="playButton"></button>
 
     <audio id="audioPlayer" preload="auto">
@@ -199,7 +212,7 @@
             audioPlayer.play().catch(error => {
                 console.error('Error playing audio:', error);
             });
-            currentlyPlaying.style.display = 'block';
+            currentlyPlaying.style.display = 'block';  // Menampilkan elemen setelah play
             playButton.style.opacity = 0;  // Mengubah opacity
             playButton.style.visibility = 'hidden';  // Menyembunyikan tombol agar tidak menghalangi
         });
