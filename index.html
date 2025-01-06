@@ -11,6 +11,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -109,7 +110,6 @@
             transform: scale(1.2);
         }
 
-        /* Tombol tak terlihat */
         .invisible-button {
             position: absolute;
             top: 0;
@@ -120,6 +120,12 @@
             border: none;
             cursor: pointer;
             z-index: 10;
+        }
+
+        .currently-playing {
+            margin: 20px 0 0 0;
+            font-size: 1em;
+            opacity: 0.5;
         }
     </style>
 </head>
@@ -153,8 +159,11 @@
         </div>
     </div>
 
-    <!-- Tombol tak terlihat -->
     <button class="invisible-button" id="playButton"></button>
+
+    <div class="currently-playing" id="currentlyPlaying" style="display: none;">
+        Currently Playing : Sound 1 by SoundHelix
+    </div>
 
     <audio id="audioPlayer">
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
@@ -164,11 +173,33 @@
     <script>
         const playButton = document.getElementById('playButton');
         const audioPlayer = document.getElementById('audioPlayer');
+        const currentlyPlaying = document.getElementById('currentlyPlaying');
 
         playButton.addEventListener('click', () => {
-            audioPlayer.play().catch(error => {
+            audioPlayer.play().then(() => {
+                playButton.style.display = 'none';
+                currentlyPlaying.style.display = 'block';
+            }).catch(error => {
                 console.error('Error playing audio:', error);
             });
+        });
+
+        audioPlayer.addEventListener('pause', () => {
+            playButton.style.display = 'block';
+            currentlyPlaying.style.display = 'none';
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+            playButton.style.display = 'block';
+            currentlyPlaying.style.display = 'none';
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                audioPlayer.pause();
+            } else if (!document.hidden && !audioPlayer.paused) {
+                audioPlayer.play();
+            }
         });
     </script>
 </body>
