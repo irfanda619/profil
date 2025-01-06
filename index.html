@@ -198,11 +198,13 @@
                 console.error('Error playing audio:', error);
             });
             currentlyPlaying.style.display = 'block';
-            playButton.style.opacity = 0;  // Sembunyikan tombol dengan animasi
+            playButton.style.opacity = 0;  // Mengubah opacity
+            playButton.style.visibility = 'hidden';  // Menyembunyikan tombol agar tidak menghalangi
         });
 
         audioPlayer.addEventListener('ended', () => {
             playButton.style.opacity = 1;  // Tombol muncul kembali setelah musik berhenti
+            playButton.style.visibility = 'visible';  // Tombol bisa terlihat lagi
             currentlyPlaying.style.display = 'none';
         });
 
@@ -210,13 +212,16 @@
             if (document.hidden) {
                 audioPlayer.pause();
                 playButton.style.opacity = 1;  // Tombol muncul kembali saat tab hilang
+                playButton.style.visibility = 'visible';  // Tombol bisa terlihat lagi
                 currentlyPlaying.style.display = 'none';
             } else {
                 if (audioPlayer.paused) {
                     playButton.style.opacity = 1;  // Tombol muncul kembali jika audio berhenti
+                    playButton.style.visibility = 'visible';  // Tombol bisa terlihat lagi
                     currentlyPlaying.style.display = 'none';
                 } else {
                     playButton.style.opacity = 0;  // Tombol disembunyikan saat musik diputar
+                    playButton.style.visibility = 'hidden';  // Menyembunyikan tombol sepenuhnya
                     currentlyPlaying.style.display = 'block';
                 }
             }
@@ -225,6 +230,7 @@
         window.addEventListener('blur', () => {
             audioPlayer.pause();
             playButton.style.opacity = 1;  // Tombol muncul kembali saat tab hilang
+            playButton.style.visibility = 'visible';  // Tombol bisa terlihat lagi
             currentlyPlaying.style.display = 'none';
         });
     </script>
